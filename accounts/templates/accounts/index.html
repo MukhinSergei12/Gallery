@@ -1,0 +1,14 @@
+{% extends 'index/base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<div class="mt-5 p-5 bg-light rounded-3 border text-center">
+    <h1 class="display-4">Добро пожаловать в ФотоГалерею!</h1>
+    <p class="lead">Загружайте свои фотографии и просматривайте их прямо из Google Photos — быстро, безопасно и удобно.</p>
+    <div style="margin-top: 30px; display: flex; justify-content: center;">
+        <img src="{{ MEDIA_URL }}Cat.gif"
+             style="width: 30vw; border: 2px solid black;"/>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'index/base.html' %}
+{% block title %}Загрузить фото{% endblock %}
+
+{% block content %}
+<div class="mt-4">
+    <h2>Загрузить новое фото</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="photo" class="form-control my-2 mt-4 mb-4" required>
+        <button type="submit" class="btn btn-success mt-10">Загрузить</button>
+    </form>
+
+    {% if uploaded_url %}
+        <div class="mt-4 text-center">
+            <p class="text-success">Фотография успешно загружена!</p>
+            <img src="{{ uploaded_url }}=w800" class="img-fluid" style="width: 60vw;">
+        </div>
+    {% endif %}
+    {% if error %}
+        <div class="alert alert-danger mt-3">{{ error }}</div>
+    {% endif %}
+</div>
+{% endblock %}
