@@ -111,8 +111,11 @@ USE_TZ = True
 
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_OAUTH_CLIENT_ID")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_OAUTH_CLIENT_SECRET")
-GOOGLE_REDIRECT_URI = 'http://localhost:8000/google/callback/'
+GOOGLE_REDIRECT_URI = os.getenv('GOOGLE_REDIRECT_URI')
 
+LOGIN_URL = '/google/login/'
+LOGIN_REDIRECT_URL = '/gallery/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
